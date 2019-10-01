@@ -1,0 +1,38 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = pd.read_csv('C:/Users/pravjha/Desktop/EbAgnos/pima-data.csv')
+
+data.shape
+
+print(data.head(10))
+
+print(data.isnull().values.any())
+
+label = data["diabetes"]
+
+features = data.drop(["diabetes"],axis=1)
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test,y_train,y_test = train_test_split( features,label, test_size =0.30 , random_state=10)
+
+from sklearn.preprocessing import Imputer
+
+fill_values = Imputer( missing_values=0, strategy='mean',axis=0)
+
+x_train = fill_values.fit_transform(x_train)
+x_test = fill_values.fit_transform(x_test)
+
+from sklearn.ensemble import RandomForestClassifier
+
+random_forest_model =RandomForestClassifier(random_state=10)
+
+random_forest_model.fit(x_train, y_train.ravel())
+
+predict_train_data = random_forest_model.predict(x_test)
+
+from sklearn import metrics
+
+print("Accuracy = {0:.3f}".format(metrics.accuracy_score(y_test, predict_train_data)))
