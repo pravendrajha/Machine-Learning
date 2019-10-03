@@ -1,0 +1,6 @@
+
+Topics to be covered : 
+1. First approach will be remove the records that contains the missing values.
+2. Second approach is to use Imputer
+3. Third approach is to use groupby and fill the missing values
+
