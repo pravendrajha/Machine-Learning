@@ -1,5 +1,66 @@
 Feature Scalaing
-1. Min Max Scalar
-2. Standard Scalar
-3. Normalize
+1. Min Max Scalar --> default if you are transforming a feature. It’s non-distorting
+2. Standard Scalar -->you need a relatively normal distribution (indepedent variable has diffrent unit measurements)
+3. Normalize --> it normalizes sample rows, not feature columns
 4. Binarize
+5:- Robust Scaler -->RobustScaler if you have outliers and want to reduce their influence
+
+
+from sklearn import preprocessing
+import numpy as np
+import pandas as pd
+
+x = np.array([[-400],
+              [-100],
+              [0],
+              [100],
+              [400]])
+
+minmaxscl = preprocessing.MinMaxScaler(feature_range=(0, 1))
+
+
+x_scaler = minmaxscl.fit_transform(x)
+
+print(x_scaler)
+
+
+import pandas as pd
+
+dataset = pd.read_csv('../ag-sal.txt')
+
+features = dataset.iloc[:,[2,3]].values
+
+
+#MinMaxScaler 
+
+minmaxscl = preprocessing.MinMaxScaler(feature_range=(0,1))
+
+features_scal = minmaxscl.fit_transform(features)
+
+print("MinMaxScaler" ,features_scal )
+
+
+#StandardScaler :-  (Xi - Xmean) / (standard Deviation of that feature)   '''
+
+minmaxscl = preprocessing.StandardScaler(with_mean=True, with_std=True)
+
+features_scal = minmaxscl.fit_transform(features)
+
+print("StandardScaler ",features_scal)
+
+#Normalize ===>  Xi /sqrt(sum of all the squares of that row) ==> Xi /sqrt(sum of all the squares of that row)
+
+normalizer2 = preprocessing.Normalizer()
+
+normal2 = normalizer2.fit_transform(features)
+
+print("Normalizer  ",normal2)
+
+
+#Binarizer 
+
+binarizer2 = preprocessing.Binarizer(33)
+
+binarizer_scaled2 = binarizer2.fit_transform(features)
+
+print("Binarizer :" , binarizer_scaled2)
