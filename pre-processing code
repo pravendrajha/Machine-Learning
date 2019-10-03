@@ -1,0 +1,72 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('../Preprocessing_data.csv')
+
+# Get the rows that contains NULL (NaN)
+df.isnull().sum()
+
+print(df.head(10))
+
+# Fill the NaN values for Occupation, Emplyment Status and Employement Type
+
+col = ['Occupation','Employment Status','Employement Type']
+df[col] = df[col].fillna(df.mode().iloc[0])
+
+
+print("after mode: " , df.head(10))
+
+
+features = df.iloc[:,:-1].values
+
+labels = df.iloc[:,-1].values
+
+
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(missing_values=np.nan, strategy='mean' , verbose=0)
+
+# 2 step transformation 
+# Fit and Tranform
+
+imputer.fit(features[:,[1,6]])
+
+features[:,[1,6]] = imputer.fit_transform(features[:,[1,6]])
+
+
+from sklearn.preprocessing import LabelEncoder
+encode = LabelEncoder()
+
+features[:,0] = encode.fit_transform(features[:,0])
+features[:,2] = encode.fit_transform(features[:,2])
+features[:,3] = encode.fit_transform(features[:,3])
+features[:,4] = encode.fit_transform(features[:,4])
+features[:,5] = encode.fit_transform(features[:,5])
+
+df1 = pd.DataFrame(features)
+
+print("after label encoding :", df1.head(10))
+
+
+from sklearn.preprocessing import OneHotEncoder
+
+hotencode = OneHotEncoder(categorical_features=[0])
+features = hotencode.fit_transform(features).toarray()
+
+hotencode = OneHotEncoder(categorical_features=[7])
+features = hotencode.fit_transform(features).toarray()
+
+hotencode = OneHotEncoder(categorical_features=[9])
+features = hotencode.fit_transform(features).toarray()
+
+hotencode = OneHotEncoder(categorical_features=[11])
+features = hotencode.fit_transform(features).toarray()
+
+hotencode = OneHotEncoder(categorical_features=[13])
+features = hotencode.fit_transform(features).toarray()
+
+#train_test_split
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(features,labels, test_size=.25,random_state=0)
