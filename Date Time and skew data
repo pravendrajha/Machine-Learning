@@ -1,0 +1,20 @@
+The robust scaler does a better job at preserving the spread of the variable after transformation for skewed variables like Fare (compare with the standard scaler or the MinMaxScaler)
+
+Date Functions =>
+
+
+data['issue_dt'] = pd.to_datetime(data.issue_d)
+
+data['issue_dt_year'] = data['issue_dt'].dt.year
+data['issue_dt_month'] = data['issue_dt'].dt.month
+data['issue_dt_quarter'] = data['issue_dt'].dt.quarter
+data['issue_dt_semester'] = np.where(data.issue_dt_quarter.isin([1,2]),1,2)
+data['issue_dt_day'] = data['issue_dt'].dt.day
+data['issue_dt_dayofweek'] = data['issue_dt'].dt.dayofweek
+data['issue_dt_dayofweek'] = data['issue_dt'].dt.weekday_name
+data['issue_dt_is_weekend'] = np.where(data['issue_dt_dayofweek'].isin(['Sunday', 'Saturday']), 1,0)
+
+
+when the distribution of the variable is skewed, perhaps it is better to scale using the mean and quantiles method, which is more robust to the presence of outliers.
+
+Discretisation is the process of transforming continuous variables into discrete variables by creating a set of contiguous intervals that spans the range of the variable's values. Supervised discretisation methods use target information to create the contiguous bins or intervals. Several supervised discretisation methods have been described, see for example the article Discretisation: An Enabling technique for a summary.
