@@ -1,0 +1,93 @@
+Univariate-->  Are we able to classfiy the category  ( if you are able to categories the lebel)
+Bivariate -->  if two features are able to define the lebels
+
+Multivariate --> if more than one features are required to identify the 
+
+
+Pairplot can be generated to do multivariate analysis 
+
+Correlation 
+
+only contigous values can we ploted on pair plot  not categorial values 
+
+
+Bell curve is required if data is normal distributed 
+
+z-score --> 
+
+
+Normal & Gausian 
+std normal deviation --> mean is 0 and std is 1 
+
+i std --> 68 %
+ii 95 %
+
+Probability Density Function => 
+
+Cumalitive Density function => 
+
+
+what will be change in in y when x is change 
+
+Good Model will be if it has low Bias and Low Variance 
+
+Over Fitting :-  High Variance and low variance 
+
+steep solve always lead to overfitting 
+
+penalyzing the fetaures along with Lambda
+
+
+magnitude for slope 
+
+Ridig Vs Lasso 
+===========
+
+Lasso help in reducing the feature selection where  as ridig doe not 
+
+r2 can be less than zero  if  ssres is > than sstotal
+
+as we are going to add the idenpendent fetaures 
+and R2 value is keep on increasing , need to peanalyzed which can be done using adjusted R2
+
+adjusted  R square 
+
+
+when the features are not corelated than only r square adjusted value will be decreased 
+
+if Rsquare and adjusted R2 values are  high the model is good 
+
+
+
+even if indepedent features has not corelated feaures , R2 will be increasing 
+
+
+ridig use ( Slope square) and lasso uses ( magnitude of slop )
+
+
+Ridge perform well than lasso but lasso performs well when we have more feautres .
+
+R2 and adjusted R squares 
+
+Rsquare =  1 - (sum of resedual / sum of average total)
+
+
+Best fit line which one gives less error or minimal error 
+
+zscore = x(i)-mean / std devi
+
+
+underfiting -> high bias , high variance 
+
+overfiting -> low bias,   high variance 
+
+
+When we combine week learners , it becomes strong learner 
+
+
+
+
+
+
+
+
