@@ -1,0 +1,54 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+from sklearn.datasets import load_iris
+
+# import some data to play with
+
+dataset=load_iris()
+data=pd.DataFrame(dataset['data'],columns=["Petal length","Petal Width","Sepal Length","Sepal Width"])
+data['Species']=dataset['target']
+
+data['Species']=data['Species'].apply(lambda x: dataset['target_names'][x])
+
+data.head()
+
+data.shape
+
+data["Species"].value_counts()
+
+data.describe()
+
+data.info()
+
+data.isnull().sum()
+
+data.columns
+
+sns.pairplot( data, hue="Species",size =3 )
+
+sns.heatmap(data.corr(),annot=True)
+
+sns.FacetGrid(data,hue="Species",size=4).map(plt.scatter,"Sepal Length","Sepal Width").add_legend()
+
+sns.FacetGrid(data,hue="Species",size=4).map(sns.distplot,"Petal length").add_legend()
+
+#sns.distplot('Petal length', data=data)
+
+#sns.distplot('Petal length')
+
+sns.boxplot(x='Species',y='Petal length',data=data)
+
+sns.violinplot(x='Species',y='Petal length',data=data)
+
+#Scatterplots
+sns.jointplot(x="Sepal Length", y="Sepal Width", data=data);
+#Hexbin plots
+sns.jointplot(x="Sepal Length", y="Sepal Width", kind ="hex",data=data );
+#Kernel density estimation
+sns.jointplot(x="Sepal Length", y="Sepal Width", kind ="kde",data=data );
+
+
+sns.boxplot(x="Species",y="Sepal Length",data=data)
+
+plt.show()
