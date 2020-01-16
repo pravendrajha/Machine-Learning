@@ -86,6 +86,19 @@ When we combine week learners , it becomes strong learner
 
 
 
+Explorartory data analaysis :-
+
+imbalanced data set :- where labels counts are not proper
+
+N features  , pair plot has limitation for pair plot , solution is PCA 
+
+if mean = median then no outliers else mean will be high
+
+boxer can help to get the percentile value .
+
+Whiskers --> 1.5 IQR 
+
+violion plots  --> combination of boxer and histogram 
 
 
 
