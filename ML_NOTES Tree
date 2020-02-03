@@ -1,0 +1,20 @@
+when we increase thd ept of tree , we increase the overfitting in decision tree 
+
+Principle of Occam's razor: Learning simpler decision trees
+
+use simple tree 
+
+Early stopping in learning decision trees --> 
+1:- limit the tree depth 
+2:-do not consider the split if that does not cause a sufficient decrease in claasification error 
+3:-minimum node size :-if data node has very less data point
+
+use classification error to limit the 
+
+Missing data handling :-
+
+# Skip data point with missing value 
+# 1:- categorial --> mode 
+2:- numeric -->mean / median
+
+
