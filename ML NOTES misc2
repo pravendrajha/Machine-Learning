@@ -1,0 +1,27 @@
+
+1:- Super vised
+2:- unsupervised 
+
+Others:- Rendom forest,System recommadation
+
+
+how to decide which algo to choose 
+
+
+Get more traning example --> fixes high variance problem
+try smaller set of features --> Fixes high variance 
+try getting additional features -> fixing high bias problem
+try adding the polynomial features --> fix high bias problem
+try decreasing penality --> fixes high bias 
+try increasing penality --> fixes high variance 
+
+
+Diagonostic:-
+
+
+Evaluvate hypothesis :-
+Split data into training set , and test set 7:3
+
+
+
+
