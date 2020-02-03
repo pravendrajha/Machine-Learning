@@ -1,0 +1,116 @@
+
+Anamoly detecion :-
+
+Ex :- Fraud detecion
+
+p(x) < E( some thersold value)
+
+Ex :- manufactring 
+
+Ex:- Monitoring the computers in data centers 
+
+#Gausian Distribution :-
+
+x E R if x is a distrubuted gaussian mean u , variance sigma sqaure 
+
+sigma --> standard deviation
+
+sigma square --> variance 
+
+paramaeter estimation ->
+
+u --> mean 
+sigma square --> variance
+
+Evaluation metrics:-
+--> True positive, false positive 
+--> Precesion/recall
+-->F1-score
+
+use cross validation set to chosse parameter (E)
+
+Anamoly Detection vs supervised learning 
+
+Anamoly --> very smal number of positive example and large number of negative(0) examples
+Supervised learnig --> large number of positive and negative examples
+
+Applications for anamoly detecion --> fraud detection, Manufacturing , Monitoring the machine in data centers 
+
+
+Supervised Learning Applications --> email spam/wather prediction/cancer detecion
+
+Multivariate Gaussian Distribution=>
+
+automatiically captures correlations b/w features
+
+computationally more expensive
+
+
+ must have m > n or else sigma is non invertibale 
+ 
+ and also features should not be reduandant.
+
+# original Gausian model ok even if m is small than N
+
+############################
+
+Learning With Large Datasets
+
+high perfomance , low baise , 
+
+Computation problem with  data ->
+
+m =100,000,000
+
+m=1000
+
+#Stochastic Gradient Descent -->
+#Mini Batch Gradient Descent
+
+
+batch Gradient Descent -- use all m example in each iteration
+Stochastic --> use 1 example in each iteration
+Mini Batch Gradient--> use b examples in each iterations
+
+Stochastic --> learning rate alpha is typically held constant 
+
+good value for b 2-100
+
+
+########################################
+
+We can see that the presence of outliers affects the performance of AdaBoost, and when outliers are removed the roc-auc improved by 0.013.
+
+Logistic Regression's and Random Forests performances seemed unaffected by outliers
+
+We can draw the same conclusion for Logistic Regression. Reducing the cardinality improves the performance and generalisation of the algorithm.
+
+Gradient Boosted trees are indeed over-fitting to the training set in those cases where the variable Cabin has a lot of labels. This was expected as tree methods tend to be biased to variables with plenty of categories.
+
+The machine learning models affected by the magnitude of the feature are:
+Linear and Logistic Regression
+Neural Networks
+Support Vector Machines
+KNN
+K-means clustering
+Linear Discriminant Analysis (LDA)
+Principal Component Analysis (PCA)
+
+
+Maginutd matters because:
+The regression coefficient is directly influenced by the scale of the variable
+Variables with bigger magnitudes / value range dominate over the ones with smaller magnitudes / value range
+Gradient descent converges faster when features are on similar scales
+Feature scaling helps decrease the time to find support vectors for SVMs
+Euclidean distances are sensitive to feature magnitude
+
+
+Machine learning models insensitive to feature magnitude are the ones based on Trees:
+Classification and Regression Trees
+Random Forests
+Gradient Boosted Trees
+
+
+Mean/median imputation consists of replacing all occurrences of missing values (NA) within a variable by the mean (if the variable has a Gaussian distribution) or median (if the variable has a skewed distribution).
+
+
