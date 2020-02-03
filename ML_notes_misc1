@@ -1,0 +1,184 @@
+skew classes :-
+
+True Positve 
+-----------
+true pos + Fasle pos
+
+
+		True Positive
+recall = 	---------------
+		true pos + false Negative
+
+
+-->Skew class 
+
+--> confusion matrix 
+
+--> F1 Score --> how to decide whic alos is best 
+based on precision and recall
+
+-------------------------------
+   algo1    -  
+	algo2	-
+	algo 3	-
+	
+
+fscore = 2 (P*R)/P+R
+
+
+if p=0 or R=0 => Fscore =0
+	
+if p=1 and  R=0 => Fscore = 1
+
+---------------------------------
+
+low bias and low varienace is good for machine learning algo
+
+
+-- many permeters and lot of training data 
+
+
+
+SVM Consecuations :-
+
+C is verry very large  then first term would be 0 
+
+Large C --> lower baise , high variance 
+Small C -->  Higher Baise , lower variance 
+
+
+=> Choice of Kernel
+=> Choice of Parameter C
+
+=> No kernal menas linear kernal
+y =1 if Ot x>=0  n large , m small
+
+=> Gausian Kernal --> need to choose sigm 
+n small --> m large ( feature scaling is required before  Gausian kernal)
+
+=> Poly nomial Kerner 
+
+=> String Kernel
+=> chi-square kernel
+=> histogram
+
+
+Multiclass Classification :-
+in built capacity for multi class classification
+
+otherwise use -- one vs all ( same as Logostoc )
+
+
+Logsitic vs svm 
+================
+
+if n is large ( relative to m )  
+n =10,000 m =10
+
+user Logistic Rgression /SVM without  kernal
+
+
+if n is small and m is intermediate 
+
+n =1-1000
+m = 10-10,000
+--> use SVM with Gaussian kernal
+
+
+if n is small and m is large 
+
+n =1-1000
+m = 50 K +
+
+create /add more features , then use logistic regression 
+or SVM with out a kernal
+
+===========================
+
+Clustering Algo :-
+
+=>group them together
+=> unlevel data 
+=> Kmeans ( Clustring ago)
+=>take unlevel data and group them into cluster
+( cluster centroid)
+=> move them to mean of points 
+
+input 
+
+=> number of klusters
+=> training data set
+
+
+cluster assignment step
+move centroid step 
+
+#Clustering optimization objective
+
+
+c(i) = index of cluster (1,2,3,..K) to which example x(i0) is currently running 
+
+uk = cluster centroid k
+
+uc(i) = cluster centroid of cluster to which example x9i) ha sbeen assigned
+
+
+how to ramdomly initialize the kluster centroid
+
+should have K <m
+
+ramdomly pick K Training examples 
+
+set U1.......Uk equal to these  K example
+
+
+Elbow is used to choose the value of K 
+
+Some out of elbow does not answers well
+
+we also can choose K mean using buisness requirement or down stream requirement.
+
+
+======================================
+Dimensionality Reduction #
+
+offers to visualize the data 
+
+Reduce data from n D to K D
+
+Principle Component Analysis 
+
+Preprocessing (feature scaling\ mean normalization ) is required for PCA 
+
+Sum of Square error 
+
+1:-Compute covarience matrix 
+2:-Compute eigenvector 
+
+Choosing The Number Of Principal Components :-
+
+			Average square projection error 
+pca k value = -------------------------------  <= 0.01
+			Total variance in the data 
+
+choose k to be smalltest value <= 0.01 ( 1%)
+
+-> 99% of variance is retained 
+
+i choose 90-99 % variance 
+choose k value in PCA
+
+compression --> to speed up applications/reduce the memory or disk
+
+visualize :- 2 D \3 D data 
+
+Misuse of PCA :-  to avoid the overfittiing 
+
+Best way to reduce overfitting is use regularization instead
+
+=============================
+Recommander systems -
+1:-Content based
+2:-Collbrative filtering 
+
+Mean normalization for Collaberative filtering 
